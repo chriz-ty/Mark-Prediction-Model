@@ -16,7 +16,7 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y
 
 #creating a model
 
-"""
+
 best=0
 for i in range(3000):   #training the model in a loop
     x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1)
@@ -30,7 +30,8 @@ for i in range(3000):   #training the model in a loop
         best=acc     #for getting higher accuracy
         with open("studentmodel.pickle","wb") as f:        #saving the model using pickle library
             pickle.dump(linear,f)
-"""
+
+#opening the saved model
 
 pickle_in = open("studentmodel.pickle","rb")
 linear=pickle.load(pickle_in)
