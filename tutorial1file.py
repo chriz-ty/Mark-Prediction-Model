@@ -15,10 +15,11 @@ Y = np.array(data[predict])
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1)
 
 #creating a model
-
-
+#you can uncomment the following code wjen you run this code for the first time so as to train the data.
+#once the data is saved in pickle, there is no need to train the data when each and every time you rum
+"""
 best=0
-for i in range(3000):   #training the model in a loop
+for i in range(1000):   #training the model in a loop
     x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1)
     linear = linear_model.LinearRegression()
     linear.fit(x_train, y_train)
@@ -30,7 +31,7 @@ for i in range(3000):   #training the model in a loop
         best=acc     #for getting higher accuracy
         with open("studentmodel.pickle","wb") as f:        #saving the model using pickle library
             pickle.dump(linear,f)
-
+"""
 #opening the saved model
 
 pickle_in = open("studentmodel.pickle","rb")
