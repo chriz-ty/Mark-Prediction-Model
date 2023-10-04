@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 import pickle
 from matplotlib import style
 
-data = pd.read_csv("student-mat.csv", sep=";")
+data = pd.read_csv("student-mat.csv", sep=";")   #loading the dataset
 
-data = data[["G1", "G2", "G3", "studytime", "failures", "absences"]]
-predict = "G3"
+data = data[["G1", "G2", "G3", "studytime", "failures", "absences"]]  #loading the feature classes
+predict = "G3"  #choosung the target variables
 X = np.array(data.drop([predict], axis=1))
 Y = np.array(data[predict])
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1)
